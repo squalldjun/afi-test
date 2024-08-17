@@ -6,6 +6,8 @@ pipeline {
   stages {
     stage('Build app with maven') {
       steps {
+        sh 'git init'
+        sh 'git config --global --add safe.directory /var/jenkins_home/workspace/pipeline1'
         sh 'git pull https://github.com/squalldjun/afi-test';
         withMaven(maven: 'MAVEN_HOME') {
           sh 'mvn clean install';
@@ -17,9 +19,9 @@ pipeline {
         sh 'docker build -t afi-test:1.0.0 .';
       }
     }
-    stage('push image to local docker') {
+    stage('run docker') {
       steps{
-        sh 'docker tag afi-test:1.0.0 192.168.18.26:2375/afi-test:1.0.0';
+        sh 'docker run --name afi-test -d -it -p 8088:8088 afi-test:1.0.0';
       }
     }
   }
