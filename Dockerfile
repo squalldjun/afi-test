@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ubi8/openjdk-17:1.20-2.1721231681
+FROM openjdk:17.0.2
 COPY target/afi-test-0.0.1-SNAPSHOT.jar ./app.jar
 
 ENV JAVA_OPTIONS="-Xms128m -Xmx256m -XX:+UseG1GC -XX:MaxMetaspaceSize=64m -XX:MaxTenuringThreshold=0"
