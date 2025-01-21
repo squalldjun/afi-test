@@ -18,3 +18,10 @@ Install jenkins and create pipeline for build and deploy application :
      process inside groovy is git pull, maven install, docker build and run
   
 - Wait until jenkins job finish and check.
+
+
+| Reference        | Contract          | 
+| ------------- |:-------------:|
+| EIP-20 Token      | 0x4c7507262dA41A5A96ae3F836D602d74Eb10A6d0 | 
+| Uniswap V2     | 0x35775d560e7e0370259c69475c44dbe5cf183afa     |  
+| Uniswap V3 |  0xa00822c70f9ba29d74d92207c798c0d9cad3735e   |
